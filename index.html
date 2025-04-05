@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1024">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=1024">
+
+  <script>
+    if (window.innerWidth < 768) {
+      document.querySelector("meta[name=viewport]").setAttribute("content", "width=1024");
+    }
+  </script>
+
+
+  <title>Lugx Gaming Shop HTML5 Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <!--
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              <img src="assets/images/fardan.png" alt="" style="width: 250px; height: auto;">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="javascript:void(0)" onclick="ShowHmm()">Our Shop</a></li>
+              <!-- <li><a href="product-details.html">Product Details</a></li> -->
+              <li><a href="contact.html">Order Website!</a></li>
+              
+
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+          <div id="myAlert" class="alert info" style="display: none; opacity: 0;">
+            <span class="closebtn" onclick="closeAlert()">&times;</span>
+            <strong>Info!</strong> Indicates a neutral informative change or action.
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ALERT -->
+  <style>
+    .alert {
+      padding: 20px;
+      background-color: #2196F3;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      margin-top: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 250%;
+    }
+
+    .alert.show {
+      opacity: 1;
+    }
+
+    .alert1 {
+      padding: 20px;
+      background-color: #2196F3;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      margin-top: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 250%;
+    }
+
+    .alert1.show1 {
+      opacity: 1;
+    }
+
+    /* Animasi shake (bergetar) */
+    @keyframes shake {
+      0% {
+        transform: translateX(0);
+      }
+
+      25% {
+        transform: translateX(-10px);
+      }
+
+      50% {
+        transform: translateX(10px);
+      }
+
+      75% {
+        transform: translateX(-10px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .shake {
+      animation: shake 0.5s ease-in-out;
+    }
+
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+  </style>
+
+
+  <script>
+    function showAlert() {
+      var alertContainer = document.getElementById("alertContainer");
+
+      // Cek apakah ada alert yang aktif
+      var existingAlert = document.querySelector(".alert1.show1");
+
+      if (existingAlert) {
+        // Jika alert sudah ada, kita tambahkan efek shake lagi
+        existingAlert.classList.remove("shake");  // Hapus animasi sebelumnya
+        void existingAlert.offsetWidth;  // Memaksa reflow (trik untuk mereset animasi)
+        existingAlert.classList.add("shake"); // Menambahkan shake lagi
+        return; // Hentikan eksekusi untuk mencegah menambah alert baru
+      }
+
+      // Buat div baru untuk alert
+      var alertBox = document.createElement("div");
+      alertBox.className = "alert show"; // Menambahkan kelas untuk animasi shake
+      alertBox.id = "myAlert";
+      alertBox.innerHTML = '<span class="closebtn" onclick="closeAlert(this)">&times;</span> 🔧 Sedang Diperbaiki... 🚧';
+
+      // Tambahkan alert ke container
+      alertContainer.appendChild(alertBox);
+
+      // Tambahkan animasi shake jika alert baru muncul
+      setTimeout(() => {
+        alertBox.classList.add("shake");
+      }, 10); // Delay kecil untuk memastikan shake dapat diterapkan
+
+      // Hilangkan alert setelah 5 detik
+      setTimeout(() => {
+        closeAlert({ parentElement: alertBox });
+      }, 1000); // 5000 ms = 5 detik
+    }
+
+    function closeAlert(element) {
+      var alertBox = element.parentElement;
+      alertBox.style.opacity = "0";
+      setTimeout(() => {
+        alertBox.remove();
+      }, 600); // Waktu untuk menghilangkan alert
+    }
+  </script>
+
+
+
+  <script>
+    function habisYah() {
+      var alertContainer = document.getElementById("alertContainer");
+
+      // Cek apakah ada alert yang aktif
+      var existingAlert = document.querySelector(".alert1.show1");
+
+      if (existingAlert) {
+        // Jika alert sudah ada, kita tambahkan efek shake lagi
+        existingAlert.classList.remove("shake");  // Hapus animasi sebelumnya
+        void existingAlert.offsetWidth;  // Memaksa reflow (trik untuk mereset animasi)
+        existingAlert.classList.add("shake"); // Menambahkan shake lagi
+        return; // Hentikan eksekusi untuk mencegah menambah alert baru
+      }
+
+      // Buat div baru untuk alert
+      var alertBox = document.createElement("div");
+      alertBox.className = "alert show"; // Menambahkan kelas untuk animasi shake
+      alertBox.id = "myAlert";
+      alertBox.innerHTML = '<span class="closebtn" onclick="closeAlert(this)">&times;</span> YAHH KUOTA HABIS 😢';
+
+      // Tambahkan alert ke container
+      alertContainer.appendChild(alertBox);
+
+      // Tambahkan animasi shake jika alert baru muncul
+      setTimeout(() => {
+        alertBox.classList.add("shake");
+      }, 10); // Delay kecil untuk memastikan shake dapat diterapkan
+
+      // Hilangkan alert setelah 5 detik
+      setTimeout(() => {
+        closeAlert({ parentElement: alertBox });
+      }, 1000); // 5000 ms = 5 detik
+    }
+
+    function closeAlert(element) {
+      var alertBox = element.parentElement;
+      alertBox.style.opacity = "0";
+      setTimeout(() => {
+        alertBox.remove();
+      }, 600
+    ); // Waktu untuk menghilangkan alert
+    }
+  </script>
+
+<script>
+  function ShowHmm() {
+    var alertContainer = document.getElementById("alertContainer");
+
+    // Cek apakah ada alert yang aktif
+    var existingAlert = document.querySelector(".alert.show");
+
+    if (existingAlert) {
+      // Jika alert sudah ada, kita tambahkan efek shake lagi
+      existingAlert.classList.remove("shake");  // Hapus animasi sebelumnya
+      void existingAlert.offsetWidth;  // Memaksa reflow (trik untuk mereset animasi)
+      existingAlert.classList.add("shake"); // Menambahkan shake lagi
+      return; // Hentikan eksekusi untuk mencegah menambah alert baru
+    }
+
+    // Buat div baru untuk alert
+    var alertBox = document.createElement("div");
+    alertBox.className = "alert show"; // Menambahkan kelas untuk animasi shake
+    alertBox.id = "myAlert";
+    alertBox.innerHTML = '<span class="closebtn" onclick="closeAlert(this)">&times;</span> 🔧 Yaahh... Belum Ada Pembaruan! 🚧';
+
+    // Tambahkan alert ke container
+    alertContainer.appendChild(alertBox);
+
+    // Tambahkan animasi shake jika alert baru muncul
+    setTimeout(() => {
+      alertBox.classList.add("shake");
+    }, 10); // Delay kecil untuk memastikan shake dapat diterapkan
+
+    // Hilangkan alert setelah 5 detik
+    setTimeout(() => {
+      closeAlert({ parentElement: alertBox });
+    }, 1000); // 5000 ms = 5 detik
+  }
+
+  function closeAlert(element) {
+    var alertBox = element.parentElement;
+    alertBox.style.opacity = "0";
+    setTimeout(() => {
+      alertBox.remove();
+    }, 600); // Waktu untuk menghilangkan alert
+  }
+</script>
+
+
+
+
+  <!-- Kontainer untuk alert -->
+  <div id="alertContainer" style="position: fixed; top: 20px; left: 35%; transform: translateX(-50%); z-index: 1000;"></div>
+
+  <!-- END ALERT -->
+
+
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="caption header-text">
+            <h6>Welcome customer</h6>
+            <h2>Best Template SITE EVER!</h2>
+            <p>Buat atau Pakai Template website responsif dan mudah digunakan untuk membantu UMKM meningkatkan kehadiran online. Cocok
+              untuk berbagai usaha, mulai dari toko online hingga portofolio bisnis & export, dengan desain profesional
+              yang memudahkan pengembangan bisnis Anda.</p>
+            <strong style="color: #ccc;"> Almost perfect!</strong>
+            <div class="rating">
+              <span class="star full">⭐</span>
+              <span class="star full">⭐</span>
+              <span class="star full">⭐</span>
+              <span class="star full">⭐</span>
+              <span class="star half">⭐</span>
+            </div>
+            
+            <style>
+              .rating {
+                font-size: 30px;
+                /* Ukuran bintang */
+                color: #ccc;
+                /* Warna default (abu-abu) */
+              }
+
+              .star {
+                color: #FFD700;
+                /* Warna bintang kuning */
+              }
+
+              .star.full {
+                color: #FFD700;
+                /* Bintang penuh (kuning) */
+              }
+
+              .star.half {
+                background: linear-gradient(to right, #FFD700 50%, #ccc 50%);
+                -webkit-background-clip: text;
+                color: transparent;
+              }
+            </style>
+
+          </div>
+        </div>
+        <div class="col-lg-4 offset-lg-2">
+          <div class="right-image">
+            <img src="]banner.png" alt="">
+            <span class="price">$19</span>
+            <span class="offer">-40%</span>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <a href="#temp">
+            <div class="item">
+              <div class="image">
+                <img src="assets/images/template.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Template <br>
+                <p>(bebayar)</p>
+              </h4>
+            </div>
+          </a>
+        </div>
+
+
+        <div class="col-lg-3 col-md-6">
+          <a href="#prices">
+            <div class="item">
+              <div class="image">
+                <img src="assets/images/price_list.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Price Lists</h4>
+              <p>(Harga Plan)</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="assets/images/domain.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Domain</h4>
+              <p>(Sewa Domain)</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <a href="#">
+            <div class="item">
+              <div class="image">
+                <img src="assets/images/hosting.png" alt="" style="max-width: 44px;">
+              </div>
+              <h4>Hosting In</h4>
+              <p>(Bantu Hosting)</p>
+            </div>
+          </a>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <p id="temp"></p>
+  <div class="section trending">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h6>Trending</h6>
+            <h2>Template</h2>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="main-button">
+            <a href="shop.html">View All</a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="thr.html"><img src="assets/foto_template/thr/THR.png" alt=""></a>
+              <span class="price">
+                <p style="color: #fff;">IDR 60.000</p>$ 5
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="category">Lebaran</span>
+              <h4>THR Online</h4>
+              <a href="thr.html"><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="javascript:void(0)" onclick="ShowHmm()" ><img src="assets/images/rapair.png" alt="" style="width: 57%; height: 50%; " ></a>
+              <span class="price">
+                <p style="color: #fff;">IDR Hmm</p>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="category">Hmm</span>
+              <h4>Hmm</h4>
+              <a  href="javascript:void(0)" onclick="ShowHmm()" ><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="javascript:void(0)" onclick="ShowHmm()" ><img src="assets/images/rapair.png" alt="" style="width: 57%; height: 50%; " ></a>
+              <span class="price">
+                <p style="color: #fff;">IDR Hmm</p>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="category">Hmm</span>
+              <h4>Hmm</h4>
+              <a  href="javascript:void(0)" onclick="ShowHmm()" ><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="item">
+            <div class="thumb">
+              <a href="javascript:void(0)" onclick="ShowHmm()" ><img src="assets/images/rapair.png" alt="" style="width: 57%; height: 50%; " ></a>
+              <span class="price">
+                <p style="color: #fff;">IDR Hmm</p>
+              </span>
+            </div>
+            <div class="down-content">
+              <span class="category">Hmm</span>
+              <h4>Hmm</h4>
+              <a  href="javascript:void(0)" onclick="ShowHmm()" ><i class="fa fa-shopping-bag"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="prices" class="section price-list1">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-heading1 text-center">
+            <h6>PRICING</h6>
+            <h2>Choose Your Plan</h2>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="price-box1">
+            <h3>UMKM Plan</h3>
+            <div class="price1">
+              <h4>RP, 110.000-550.000</h4>
+              <span>(10k-20k/Month)</span>
+            </div>
+            <ul>
+              <li>✔ Buat Website</li>
+              <li>X✔ 5GB Storage</li>
+              <li>X✔ Domain</li>
+              <li>X✔ Hosting</li>
+              <li>X✔ 3-8x Update Website</li>
+              <li>x✔ Garansi dari hacker dan virus</li>
+              <li>✔ Basic Features</li>
+              <li>
+                (<a href="https://wa.me/" target="_blank">
+                  <img src="assets/images/wa.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+                </a>)
+              </li>
+            </ul>
+            <a href="https://wa.me/6285136752404" class="main-button1">Order</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="price-box1 featured1">
+            <h3>WordPress </h3>
+            <div class="price1">
+              <h4>RP, 700.000-1.900.000</h4>
+              <span></span>
+            </div>
+            <ul>
+              <ul>
+                <li>✔ Toko Online dengan WordPress + WooCommerce</li>
+                <li>✔ 100GB Storage</li>
+                <li>✔ Unlimited Produk</li>
+                <li>✔ Garansi dari hacker dan virus</li>
+                <li>✔ Hosting Dedicated</li>
+                <li>✔ Integrasi Resi & Tracking Pengiriman (JNE, J&T, SiCepat, dll.)</li>
+                <li>✔ Opsi Pembayaran (Bank Transfer, E-Wallet, COD, dll.)</li>
+                <li>✔ Fitur Diskon & Voucher Belanja</li>
+                <li>✔ Multi-Vendor (Marketplace Mode)</li>
+                <li>✔ Akses ke Dashboard Statistik Penjualan</li>
+                <li>✔ Support Prioritas 24/7</li>
+                <li>✔ WhatsApp, TikTok, Instagram, Facebook</li>
+              </ul>
+              <li>
+                (<a href="https://wa.me/6285136752404" target="_blank">
+                  <img src="assets/images/wa.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                  <img src="assets/images/tiktok.png" alt="TikTok"
+                    style="width: 24px; height: 24px; margin-left: 10px;">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                  <img src="assets/images/ins.png" alt="TikTok" style="width: 24px; height: 24px; margin-left: 10px;">
+                </a>)
+            </ul>
+
+            <a href="https://wa.me/6285136752404" class="main-button1">Order</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="price-box1">
+            <h3>Store Plan</h3>
+            <div class="price1">
+              <h4>RP, 920.000-1.300.000</h4>
+              <span>(110k-180k/Month)</span>
+            </div>
+            <ul>
+              <li>✔ Buat Website</li>
+              <li>✔ 32GB Storage</li>
+              <li>✔ 50+ Produk</li>
+              <li>✔ Garansi dari hacker dan virus</li>
+              <li>✔ Hosting</li>
+              <li>✔ 32-80x Update Website</li>
+              <li>✔ Basic Features custom</li>
+              <li>
+                (<a href="https://wa.me/6285136752404" target="_blank">
+                  <img src="assets/images/wa.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                  <img src="assets/images/tiktok.png" alt="TikTok"
+                    style="width: 24px; height: 24px; margin-left: 10px;">
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                  <img src="assets/images/ins.png" alt="TikTok" style="width: 24px; height: 24px; margin-left: 10px;">
+                </a>)
+              </li>
+            </ul>
+            <a href="https://wa.me/6285136752404" class="main-button1">Order</a>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .section.price-list1 {
+      padding: 60px 0;
+      background: #eef5ff;
+      text-align: center;
+    }
+
+    .section-heading1 h6 {
+      color: #007bff;
+      font-size: 16px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-heading1 h2 {
+      font-size: 32px;
+      font-weight: bold;
+      color: #004080;
+      margin-bottom: 40px;
+    }
+
+    .price-box1 {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: 0.3s;
+      border-top: 5px solid #007bff;
+    }
+
+    .price-box1.featured1 {
+      border-top: 5px solid #0056b3;
+      transform: scale(1.05);
+    }
+
+    .price-box1 h3 {
+      font-size: 24px;
+      font-weight: bold;
+      color: #0056b3;
+      margin-bottom: 20px;
+    }
+
+    .price1 {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    .price1 span {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .price-box1 ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .price-box1 ul li {
+      font-size: 16px;
+      padding: 5px 0;
+      color: #333;
+    }
+
+    .main-button1 {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .main-button1:hover {
+      background: #0056b3;
+    }
+  </style>
+
+  <div class="section categories">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Categories</h6>
+            <h2>Gratis Categories</h2>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>THR Online <br> <p style="color: #fff;" >Claim</p> </h4>
+            
+            <div class="thumb">
+              <a href="javascript:void(0);" onclick="habisYah()">
+                <img src="]banner.png" alt="">
+              </a>
+              <strong style="color: #fff;">GRATIS March ,30-31 2025 </strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Coming Soon</h4>
+            <div class="thumb">
+              <a href="javascript:void(0);" onclick="showAlert()">
+                <img src="assets/images/rapair.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Coming Soon</h4>
+            <div class="thumb">
+              <a href="javascript:void(0);" onclick="showAlert()">
+                <img src="assets/images/rapair.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Coming Soon</h4>
+            <div class="thumb">
+              <a href="javascript:void(0);" onclick="showAlert()">
+                <img src="assets/images/rapair.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <h4>Coming Soon</h4>
+            <div class="thumb">
+              <a href="javascript:void(0);" onclick="showAlert()">
+                <img src="assets/images/rapair.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="shop">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>Our Shop</h6>
+                  <h2>DP 50% Sebelum Order & Dapatkan Harga Terbaik <em>Untuk Anda!</em></h2>
+                </div>
+                <p>Kami menyediakan layanan pembuatan website profesional dengan desain modern dan fungsionalitas yang optimal, sesuai kebutuhan bisnis Anda.</p>
+
+                <div class="main-button">
+                  <a href="https://wa.me/6285136752404">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-2 align-self-end">
+          <div class="subscribe">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="section-heading">
+                  <h6>NEWSLETTER</h6>
+                  <h2>Dapatkan Diskon 2% Setelah Anda 5x Komentar dan 1x Follow Kami di TikTok!</h2>
+                </div>
+                <div class="search-input">
+                  <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="assets/images/tiktok.png" alt="TikTok"
+                      style="width: 100px; height: 100px; margin-left: 150px;">
+                  </a>
+                  <!-- <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="assets/images/ins.png" alt="TikTok" style="width: 80px; height: 80px; margin-left: 10px;">
+                  </a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2024 FARDANG TI. All rights reserved. &nbsp;&nbsp; <a rel="nofollow"
+            href="https://templatemo.com" target="_blank">contacts: <a href="https://wa.me/6285136752404"
+              target="_blank">
+              <img src="assets/images/wa.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank">
+              <img src="assets/images/tiktok.png" alt="TikTok" style="width: 24px; height: 24px; margin-left: 10px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="assets/images/ins.png" alt="Instagram" style="width: 24px; height: 24px; margin-left: 10px;">
+            </a></a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>

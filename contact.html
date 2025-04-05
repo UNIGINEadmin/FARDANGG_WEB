@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=1024">
+
+    <script>
+      if (window.innerWidth < 768) {
+          document.querySelector("meta[name=viewport]").setAttribute("content", "width=1024");
+      }
+      </script>
+
+    <title>Lugx Gaming Template - Contact Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+<!--
+
+
+
+TemplateMo 589 lugx gaming
+
+https://templatemo.com/tm-589-lugx-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                       <img src="assets/images/fardan.png" alt="" style="width: 250px; height: auto;">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="index.html" onclick="ShowHmm()">Our Shop</a></li>
+                      <!-- <li><a href="product-details.html">Product Details</a></li> -->
+                      <li><a href="contact.html" class="active">Contact Us</a></li>
+                  </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+
+  <div>
+    <script>
+      function ShowHmm() {
+        var alertContainer = document.getElementById("alertContainer");
+    
+        // Cek apakah ada alert yang aktif
+        var existingAlert = document.querySelector(".alert.show");
+    
+        if (existingAlert) {
+          // Jika alert sudah ada, kita tambahkan efek shake lagi
+          existingAlert.classList.remove("shake");  // Hapus animasi sebelumnya
+          void existingAlert.offsetWidth;  // Memaksa reflow (trik untuk mereset animasi)
+          existingAlert.classList.add("shake"); // Menambahkan shake lagi
+          return; // Hentikan eksekusi untuk mencegah menambah alert baru
+        }
+    
+        // Buat div baru untuk alert
+        var alertBox = document.createElement("div");
+        alertBox.className = "alert show"; // Menambahkan kelas untuk animasi shake
+        alertBox.id = "myAlert";
+        alertBox.innerHTML = '<span class="closebtn" onclick="closeAlert(this)">&times;</span> 🔧 Yaahh... Belum Ada Pembaruan! 🚧';
+    
+        // Tambahkan alert ke container
+        alertContainer.appendChild(alertBox);
+    
+        // Tambahkan animasi shake jika alert baru muncul
+        setTimeout(() => {
+          alertBox.classList.add("shake");
+        }, 10); // Delay kecil untuk memastikan shake dapat diterapkan
+    
+        // Hilangkan alert setelah 5 detik
+        setTimeout(() => {
+          closeAlert({ parentElement: alertBox });
+        }, 1000); // 5000 ms = 5 detik
+      }
+    
+      function closeAlert(element) {
+        var alertBox = element.parentElement;
+        alertBox.style.opacity = "0";
+        setTimeout(() => {
+          alertBox.remove();
+        }, 600); // Waktu untuk menghilangkan alert
+      }
+    </script>
+  </div>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Contact Us</h3>
+          <span class="breadcrumb"><a href="#">Home</a>  >  Contact Us</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-page section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="left-text">
+            <div class="section-heading">
+              <h6>Contact Us</h6>
+              <h2>Say Hello!</h2>
+            </div>
+            <p>Template website responsif dan mudah digunakan untuk membantu UMKM meningkatkan kehadiran online. Cocok
+              untuk berbagai usaha, mulai dari toko online hingga portofolio bisnis & export, dengan desain profesional
+              yang memudahkan pengembangan bisnis Anda.</p><ul>
+              <li><span>Address</span> Alun - Alun Kabupaten Sidoarjo
+                Gajah Timur, Magersari, Sidoarjo, Sidoarjo Regency, East Java 61212</li>
+              <li><span>Phone</span> +123 456 7890</li>
+              <li><span>Tiktok</span> - </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="right-content">
+            <div class="row">
+              <div class="col-lg-12">
+                <div id="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31649.88860362801!2d112.72713024999999!3d-7.43911075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e6b4f4287b57%3A0xe7f2c6fe6515acaa!2sAlun%20-%20Alun%20Kabupaten%20Sidoarjo!5e0!3m2!1sen!2sid!4v1743700903566!5m2!1sen!2sid" width="100%" height="325px" frameborder="0" style="border:0; border-radius: 23px;" allowfullscreen=""></iframe>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <form id="contact-form" action="" method="post">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="surname" name="surname" id="surname" placeholder="Your Surname..." autocomplete="on" required>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-6">
+                      <fieldset>
+                        <input type="subject" name="subject" id="subject" placeholder="Subject..." autocomplete="on" >
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>Copyright © 2024 FARDANG TI. All rights reserved. &nbsp;&nbsp; <a rel="nofollow"
+            href="https://templatemo.com" target="_blank">contacts: <a href="https://wa.me/6285136752404" target="_blank">
+              <img src="assets/images/wa.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank">
+              <img src="assets/images/tiktok.png" alt="TikTok" style="width: 24px; height: 24px; margin-left: 10px;">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+              <img src="assets/images/ins.png" alt="Instagram" style="width: 24px; height: 24px; margin-left: 10px;">
+            </a></a></p>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/counter.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  </body>
+
+
+  
+</html>

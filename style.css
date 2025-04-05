@@ -1,0 +1,6 @@
+body {
+    max-width: 100%; /* Pastikan body tidak lebih besar dari viewport */
+    margin: 0 auto; /* Tengah di layar */
+    overflow-x: hidden; /* Hilangkan scroll horizontal */
+    transform: none; /* Hapus transformasi yang tidak perlu */
+}
